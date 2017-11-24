@@ -30,7 +30,14 @@ class TopGamesGridFlowLayout: UICollectionViewFlowLayout {
     }
 
     func itemWidth() -> CGFloat {
-        return collectionView!.frame.width/2 - 12
+        
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            itemHeight = 180
+            return collectionView!.frame.width/3 - 12
+        } else {
+            itemHeight = 160
+            return collectionView!.frame.width/2 - 12
+        }
     }
     
     override var itemSize: CGSize {

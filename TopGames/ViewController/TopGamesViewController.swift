@@ -121,7 +121,6 @@ class TopGamesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailsSegue" {
             let detailsVC = segue.destination as! DetailsViewController
-            detailsVC.navigationItem.backBarButtonItem?.title = ""
             detailsVC.game = selectedGame
             
         }
@@ -150,7 +149,15 @@ extension TopGamesViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! TopGamesCollectionViewCell
-        cell.prepare(with: listGames[indexPath.row])
+        cell.prepare(with: listGames[indexPath.row], position: indexPath.row + 1)
+        
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        
         return cell
     }
     

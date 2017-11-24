@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,13 +37,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-U5-cdr">
+                                <rect key="frame" x="318" y="0.0" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Btu-U5-cdr" secondAttribute="height" multiplier="1:1" id="UDg-vX-uL4"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hE-zI-f99">
+                                <rect key="frame" x="335" y="13" width="16" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gTI-67-aP5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="0Cy-qZ-97s"/>
                             <constraint firstItem="gTI-67-aP5" firstAttribute="top" secondItem="WEb-Sv-jAQ" secondAttribute="top" constant="8" id="2My-6G-OYO"/>
+                            <constraint firstAttribute="trailing" secondItem="Btu-U5-cdr" secondAttribute="trailing" id="4A1-pl-aGu"/>
                             <constraint firstItem="tFe-05-nQT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="59l-Cf-LlR"/>
+                            <constraint firstItem="Btu-U5-cdr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5o5-Nd-E5L"/>
+                            <constraint firstItem="8hE-zI-f99" firstAttribute="centerX" secondItem="Btu-U5-cdr" secondAttribute="centerX" id="IYz-v8-smb"/>
                             <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tFe-05-nQT" secondAttribute="bottom" id="JT5-g5-3Dd"/>
+                            <constraint firstItem="8hE-zI-f99" firstAttribute="centerY" secondItem="Btu-U5-cdr" secondAttribute="centerY" id="KQz-0P-agY"/>
                             <constraint firstItem="WEb-Sv-jAQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X6U-ie-nCZ"/>
                             <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gTI-67-aP5" secondAttribute="trailing" constant="8" id="aQE-Yd-esx"/>
                             <constraint firstItem="tFe-05-nQT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eYY-Xe-TYE"/>
@@ -49,6 +68,7 @@
                             <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WEb-Sv-jAQ" secondAttribute="trailing" id="gri-Jx-zHw"/>
                             <constraint firstItem="tFe-05-nQT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="jBR-IC-JlE"/>
                             <constraint firstItem="WEb-Sv-jAQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="kHt-Zd-Kr3"/>
+                            <constraint firstItem="Btu-U5-cdr" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.2" id="oIY-KH-zfT"/>
                             <constraint firstItem="WEb-Sv-jAQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vmG-Lb-bKs"/>
                             <constraint firstItem="gTI-67-aP5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wQj-E4-flP"/>
                         </constraints>
@@ -67,6 +87,7 @@
             <connections>
                 <outlet property="logoImageView" destination="tFe-05-nQT" id="KTN-dn-YDG"/>
                 <outlet property="nameLabel" destination="gTI-67-aP5" id="S2o-dq-L2x"/>
+                <outlet property="positionLabel" destination="8hE-zI-f99" id="pz4-GO-QBJ"/>
             </connections>
             <point key="canvasLocation" x="-44" y="-270.5"/>
         </collectionViewCell>

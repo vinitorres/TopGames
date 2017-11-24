@@ -22,8 +22,6 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Game Detalhes"
-        
         let resource = ImageResource(downloadURL: URL(string: (game?.imageBox!)!)!, cacheKey: game?.imageBox)
 
         boxImageView.kf.setImage(with: resource)
